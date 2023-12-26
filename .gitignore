@@ -1,5 +1,1 @@
-/target
-
-/src/exercices/ex1/target/**
-/src/exercices/ex2/target/**
-/src/utils/target/**
+**/target/

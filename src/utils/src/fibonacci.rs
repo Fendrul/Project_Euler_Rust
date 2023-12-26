@@ -1,11 +1,23 @@
+use getset::{Getters, Setters};
+//implement the copy trait
+
+#[derive(Debug, Getters, Setters)]
 pub struct Fibonacci {
+    #[getset(get = "pub")]
     curr: u32,
+    #[getset(get = "pub")]
     next: u32,
 }
 
 impl Fibonacci {
     pub fn new() -> Self {
         Fibonacci { curr: 0, next: 1 }
+    }
+}
+
+impl Default for Fibonacci {
+    fn default() -> Self {
+        Self::new()
     }
 }
 

@@ -20,7 +20,7 @@ fn main() {
 
     let sum: u64 = truncatable_primes.iter().sum();
 
-    println!("Sum of truncatable primes: {}", sum);
+    println!("\nSum of truncatable primes: {}", sum);
 }
 
 fn is_truncatable_number(number: u64) -> bool {
@@ -35,10 +35,10 @@ fn is_truncatable_number(number: u64) -> bool {
     truncate_number(&digits, true) && truncate_number(&digits, false)
 }
 
-fn truncate_number(imported_digits: &[u64], mut truncate_from_left: bool) -> bool {
+fn truncate_number(imported_digits: &[u64], truncate_from_left: bool) -> bool {
     let mut digits = imported_digits.to_vec();
 
-    for i in 0..digits.len() - 1 {
+    for _i in 0..digits.len() - 1 {
         if truncate_from_left {
             digits.remove(0);
         } else {
@@ -50,8 +50,6 @@ fn truncate_number(imported_digits: &[u64], mut truncate_from_left: bool) -> boo
         if !is_prime(number) {
             return false;
         }
-
-        truncate_from_left = !truncate_from_left;
     }
 
     true
